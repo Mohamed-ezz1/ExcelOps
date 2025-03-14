@@ -22,13 +22,16 @@ public class Person
 }
 ```
 📌 2️⃣ Read Excel Data into a List of Objects
+```csharp
 string filePath = @"C:\path\to\file.xlsx";
 List<Person> people = ExcelImporter.ReadExcelDataUsingPropertyNames<Person>(filePath);
+```
 📌 3️⃣ (Optional) Use Attributes for Custom Column Names
+```csharp
 [ExcelColumn("Full Name")]
 public string Name { get; set; }  
 List<Person> people = ExcelImporter.ReadExcelDataUsingAttributes<Person>(filePath);
-
+```
 
 🔧 Requirements
 💻 .NET 8+
